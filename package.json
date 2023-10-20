@@ -1,0 +1,97 @@
+{
+  "name": "tonistatus",
+  "displayName": "ToniStatus",
+  "description": "Teste de implementação de uma extensão para VS Code",
+  "icon": "img/icon.png",
+  "version": "1.0.0",
+	"publisher": "ToniStatus-myFistextension",
+  "author": {
+    "name": "Antônio Abrantes",
+    "email": "antonio_abrantes@hotmail.com.br"
+  },
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/antonio-abrantes/my-fist-extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonio-abrantes/my-fist-extension"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "statusbar",
+    "status",
+    "custom",
+    "item",
+    "personalize",
+    "customizer",
+    "personal"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Status Bar Custom Item",
+      "properties": {
+        "statusBarCustomItem.text": {
+          "type": "string",
+          "default": "Antônio Abrantes",
+          "description": "Custom Item Text (can be your name)"
+        },
+        "statusBarCustomItem.tooltip": {
+          "type": "string",
+          "default": "This Visual Studio Code belongs to Antônio Abrantes",
+          "description": "Custom Item Tooltip Text"
+        },
+        "statusBarCustomItem.icon": {
+          "type": "string",
+          "default": "🤓💻",
+          "description": "Custom Item Icon"
+        },
+        "statusBarCustomColor.primaryBkColor": {
+          "type": "string",
+          "default": "#1a8cd8",
+          "description": "StatusBar background color"
+        },
+        "statusBarCustomColor.secondaryBkColor": {
+          "type": "string",
+          "default": "#136ba5",
+          "description": "StatusBar No Folder and Debugging background color"
+        },
+        "statusBarCustomColor.foregroundColor": {
+          "type": "string",
+          "default": "#ffffff",
+          "description": "Foreground (text) color"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "dependencies": {
+    "@vscode/test-electron": "^2.1.3"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.83.0",
+    "@types/mocha": "^10.0.2",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "eslint": "^8.50.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.2.2",
+    "@vscode/test-electron": "^2.3.4"
+  }
+}
